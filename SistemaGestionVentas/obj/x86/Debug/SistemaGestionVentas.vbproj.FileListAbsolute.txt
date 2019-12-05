@@ -37,3 +37,6 @@ F:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\SistemaGestion
 F:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\SistemaGestionVentas\SistemaGestionVentas\obj\x86\Debug\SistemaGestionVentas.xml
 F:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\SistemaGestionVentas\SistemaGestionVentas\obj\x86\Debug\SistemaGestionVentas.pdb
 E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\SistemaGestionVentas\SistemaGestionVentas\obj\x86\Debug\WindowsApplication1.verVentaDetalle.resources
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\sistemaVentas\SistemaGestionVentas\obj\x86\Debug\SistemaGestionVentas.exe
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\sistemaVentas\SistemaGestionVentas\obj\x86\Debug\SistemaGestionVentas.xml
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\sistemaVentas\SistemaGestionVentas\obj\x86\Debug\SistemaGestionVentas.pdb

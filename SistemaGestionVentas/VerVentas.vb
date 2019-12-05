@@ -5,12 +5,10 @@ Imports System.Data.Odbc
 
 
 Public Class VerVentas
-
+    Dim conexion As String = "Server=localhost\SQLEXPRESS02;Database=master;Initial Catalog=SistemaVentas;Trusted_Connection=True;"
     Private Sub actualizarTabla()
         Try
             Dim dt As New DataTable
-            Dim conexion As String
-            conexion = "Server=localhost\SQLEXPRESS02;Database=master;Initial Catalog=SistemaVentas;Trusted_Connection=True;"
             Dim cn As New SqlConnection
             cn.ConnectionString = conexion
             Using adaptador As New SqlDataAdapter("SELECT N_venta, total, iva, total_final from ventas;", conexion)
