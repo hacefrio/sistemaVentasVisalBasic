@@ -22,11 +22,36 @@ Public Class VerVentas
 
     Private Sub VerVentas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         actualizarTabla()
+        Dim total As Integer
+        total= 0
+        Try
+            Dim cn As New SqlConnection
+            cn.ConnectionString = conexion
+            Dim adaptador As New SqlCommand("select sum(total_final) from  dbo.ventas where fecha LIKE'%" + MesAno.Text + "%' ;", cn)
+            cn.Open()
+            total = adaptador.ExecuteScalar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        ventasMes.Text = total
+
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         verVentaDetalle.TextBox1.Text = nBoleta.Text
         verVentaDetalle.Show()
 
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        Try
+            Dim cn As New SqlConnection
+            cn.ConnectionString = conexion
+            Dim adaptador As New SqlCommand("select sum(total_final) from  dbo.ventas where fecha LIKE'%" + MesAno.Text + "%' ;", cn)
+            cn.Open()
+            ventasMes.Text = adaptador.ExecuteScalar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class
