@@ -21,73 +21,86 @@ Public Class RealizarVenta
     End Sub
 
     Private Sub RealizarVenta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        fecha.Text = DateTime.Now.ToString("dd/MM/yyyy")
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        Dim precio As String
-        precio = 0
-        Try
-            Dim cn As New SqlConnection
-            cn.ConnectionString = conexion
-            Dim adaptador1 As New SqlCommand("select precio from  producto where id_producto = '" + id_producto.Text() + "';", cn)
-            cn.Open()
-            precio = adaptador1.ExecuteScalar()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        Try
-            Dim conexion As String
-            conexion = "Server=localhost\SQLEXPRESS02;Database=master;Initial Catalog=SistemaVentas;Trusted_Connection=True;"
-            Dim cn As New SqlConnection
-            cn.ConnectionString = conexion
-            Dim adaptador2 As New SqlCommand("insert into dbo.detalleVenta values ('" + id_producto.Text() + "','" + cantidad.Text() + "','" + CStr(precio * CInt(cantidad.Text())) + "','" + nBoleta.Text() + "')", cn)
-            cn.Open()
-            adaptador2.ExecuteNonQuery()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        Try
-            Dim conexion As String
-            conexion = "Server=localhost\SQLEXPRESS02;Database=master;Initial Catalog=SistemaVentas;Trusted_Connection=True;"
-            Dim cn As New SqlConnection
-            cn.ConnectionString = conexion
-            Dim adaptador As New SqlCommand("UPDATE inventario  SET cantidad =cantidad-'" + cantidad.Text + "'where ID_producto ='" + id_producto.Text + "';", cn)
-            cn.Open()
-            adaptador.ExecuteNonQuery()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        actualizarTabla()
-        MsgBox("Proceso terminado")
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAgregar.Click
+        If nBoleta.Text().Equals("") = True Then
+            MsgBox("Porfavor, antes de agregar un producto, agrege un numero de boleta")
+        Else
+            Dim precio As String
+            precio = 0
+            Try
+                Dim cn As New SqlConnection
+                cn.ConnectionString = conexion
+                Dim adaptador1 As New SqlCommand("select precio from  producto where id_producto = '" + id_producto.Text() + "';", cn)
+                cn.Open()
+                precio = adaptador1.ExecuteScalar()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            Try
+                Dim cn As New SqlConnection
+                cn.ConnectionString = conexion
+                Dim adaptador2 As New SqlCommand("insert into dbo.detalleVenta values ('" + id_producto.Text() + "','" + cantidad.Text() + "','" + CStr(precio * CInt(cantidad.Text())) + "','" + nBoleta.Text() + "')", cn)
+                cn.Open()
+                adaptador2.ExecuteNonQuery()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            Try
+                Dim cn As New SqlConnection
+                cn.ConnectionString = conexion
+                Dim adaptador As New SqlCommand("UPDATE inventario  SET cantidad =cantidad-'" + cantidad.Text + "'where ID_producto ='" + id_producto.Text + "';", cn)
+                cn.Open()
+                adaptador.ExecuteNonQuery()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            actualizarTabla()
+            MsgBox("Proceso terminado")
+        End If
+
 
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Dim total As String
         total = 0
-        Try
-            Dim cn As New SqlConnection
-            cn.ConnectionString = conexion
-            Dim adaptador1 As New SqlCommand("select sum(total) from  detalleVenta where id_producto = '" + id_producto.Text() + "';", cn)
-            cn.Open()
-            total = adaptador1.ExecuteScalar()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        Try
-            Dim cn As New SqlConnection
-            cn.ConnectionString = conexion
-            Dim adaptador2 As New SqlCommand("insert into dbo.ventas values ('" + nBoleta.Text() + "','" + total + "','" + CStr(total * 0.19) + "','" + CStr(total * 1.19) + "')", cn)
-            cn.Open()
-            adaptador2.ExecuteNonQuery()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        MsgBox("Venta realizada con exito")
+        If nBoleta.Text().Equals("") = True Then
+            MsgBox("Porfavor, antes de realizar una venta, ingrese  el numero de boleta")
+        Else
+            Try
+                Dim cn As New SqlConnection
+                cn.ConnectionString = conexion
+                Dim adaptador As New SqlCommand("select sum(total) from  dbo.detalleVenta where N_venta = '" + nBoleta.Text() + "';", cn)
+                cn.Open()
+                total = adaptador.ExecuteScalar()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            Try
+                Dim cn As New SqlConnection
+                cn.ConnectionString = conexion
+                Dim adaptador As New SqlCommand("insert into dbo.ventas values ('" + nBoleta.Text() + "','" + total + "','" + CStr(total * 0.19) + "','" + CStr(total * 1.19) + "','" + fecha.Text + "')", cn)
+                cn.Open()
+                adaptador.ExecuteNonQuery()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            MsgBox("Venta realizada con exito")
+        End If
+
     End Sub
 
+
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        actualizarTabla()
+        If nBoleta.Text().Equals("") = True Then
+            MsgBox("Porfavor, antes de ver carrito, agrege un numero de boleta")
+        Else
+            actualizarTabla()
+        End If
+
     End Sub
+
 End Class

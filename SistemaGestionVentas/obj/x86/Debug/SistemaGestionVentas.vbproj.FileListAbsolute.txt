@@ -40,3 +40,17 @@ E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\SistemaGestion
 E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\sistemaVentas\SistemaGestionVentas\obj\x86\Debug\SistemaGestionVentas.exe
 E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\sistemaVentas\SistemaGestionVentas\obj\x86\Debug\SistemaGestionVentas.xml
 E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\sistemaVentas\SistemaGestionVentas\obj\x86\Debug\SistemaGestionVentas.pdb
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\ahorasifinal\SistemaGestionVentas\obj\x86\Debug\SistemaGestionVentas.exe
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\ahorasifinal\SistemaGestionVentas\obj\x86\Debug\SistemaGestionVentas.xml
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\ahorasifinal\SistemaGestionVentas\obj\x86\Debug\SistemaGestionVentas.pdb
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\ahorasifinal\SistemaGestionVentas\bin\Debug\SistemaGestionVentas.exe
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\ahorasifinal\SistemaGestionVentas\bin\Debug\SistemaGestionVentas.pdb
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\ahorasifinal\SistemaGestionVentas\bin\Debug\SistemaGestionVentas.xml
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\ahorasifinal\SistemaGestionVentas\obj\x86\Debug\WindowsApplication1.Main.resources
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\ahorasifinal\SistemaGestionVentas\obj\x86\Debug\WindowsApplication1.RealizarVenta.resources
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\ahorasifinal\SistemaGestionVentas\obj\x86\Debug\WindowsApplication1.Resources.resources
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\ahorasifinal\SistemaGestionVentas\obj\x86\Debug\WindowsApplication1.VerInventario.resources
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\ahorasifinal\SistemaGestionVentas\obj\x86\Debug\WindowsApplication1.VerProductos.resources
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\ahorasifinal\SistemaGestionVentas\obj\x86\Debug\WindowsApplication1.verVentaDetalle.resources
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\ahorasifinal\SistemaGestionVentas\obj\x86\Debug\WindowsApplication1.VerVentas.resources
+E:\cuarto semestre\punto net\Sistema de gestion de venta y bodega\ahorasifinal\SistemaGestionVentas\obj\x86\Debug\SistemaGestionVentas.vbproj.GenerateResource.Cache

@@ -11,7 +11,7 @@ Public Class VerVentas
             Dim dt As New DataTable
             Dim cn As New SqlConnection
             cn.ConnectionString = conexion
-            Using adaptador As New SqlDataAdapter("SELECT N_venta, total, iva, total_final from ventas;", conexion)
+            Using adaptador As New SqlDataAdapter("SELECT N_venta, total, iva, total_final, fecha from ventas;", conexion)
                 adaptador.Fill(dt)
             End Using
             DataGrid.DataSource = dt
