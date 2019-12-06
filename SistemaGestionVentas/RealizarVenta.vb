@@ -25,43 +25,56 @@ Public Class RealizarVenta
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAgregar.Click
-        If nBoleta.Text().Equals("") = True Then
-            MsgBox("Porfavor, antes de agregar un producto, agrege un numero de boleta")
+        Dim stock As Integer = 0
+        Try
+            Dim cn As New SqlConnection
+            cn.ConnectionString = conexion
+            Dim adaptador As New SqlCommand("select cantidad from  dbo.inventario where id_producto = '" + id_producto.Text() + "';", cn)
+            cn.Open()
+            stock = adaptador.ExecuteScalar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        stock = stock - cantidad.Text
+        If stock < 0 Then
+            MsgBox("No hay suficiente stock")
         Else
-            Dim precio As String
-            precio = 0
-            Try
-                Dim cn As New SqlConnection
-                cn.ConnectionString = conexion
-                Dim adaptador1 As New SqlCommand("select precio from  producto where id_producto = '" + id_producto.Text() + "';", cn)
-                cn.Open()
-                precio = adaptador1.ExecuteScalar()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-            Try
-                Dim cn As New SqlConnection
-                cn.ConnectionString = conexion
-                Dim adaptador2 As New SqlCommand("insert into dbo.detalleVenta values ('" + id_producto.Text() + "','" + cantidad.Text() + "','" + CStr(precio * CInt(cantidad.Text())) + "','" + nBoleta.Text() + "')", cn)
-                cn.Open()
-                adaptador2.ExecuteNonQuery()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-            Try
-                Dim cn As New SqlConnection
-                cn.ConnectionString = conexion
-                Dim adaptador As New SqlCommand("UPDATE inventario  SET cantidad =cantidad-'" + cantidad.Text + "'where ID_producto ='" + id_producto.Text + "';", cn)
-                cn.Open()
-                adaptador.ExecuteNonQuery()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-            actualizarTabla()
-            MsgBox("Proceso terminado")
+            If nBoleta.Text().Equals("") = True Then
+                MsgBox("Porfavor, antes de agregar un producto, agrege un numero de boleta")
+            Else
+                Dim precio As String
+                precio = 0
+                Try
+                    Dim cn As New SqlConnection
+                    cn.ConnectionString = conexion
+                    Dim adaptador1 As New SqlCommand("select precio from  producto where id_producto = '" + id_producto.Text() + "';", cn)
+                    cn.Open()
+                    precio = adaptador1.ExecuteScalar()
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+                Try
+                    Dim cn As New SqlConnection
+                    cn.ConnectionString = conexion
+                    Dim adaptador2 As New SqlCommand("insert into dbo.detalleVenta values ('" + id_producto.Text() + "','" + cantidad.Text() + "','" + CStr(precio * CInt(cantidad.Text())) + "','" + nBoleta.Text() + "')", cn)
+                    cn.Open()
+                    adaptador2.ExecuteNonQuery()
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+                Try
+                    Dim cn As New SqlConnection
+                    cn.ConnectionString = conexion
+                    Dim adaptador As New SqlCommand("UPDATE inventario  SET cantidad =cantidad-'" + cantidad.Text + "'where ID_producto ='" + id_producto.Text + "';", cn)
+                    cn.Open()
+                    adaptador.ExecuteNonQuery()
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+                actualizarTabla()
+                MsgBox("Proceso terminado")
+            End If
         End If
-
-
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
