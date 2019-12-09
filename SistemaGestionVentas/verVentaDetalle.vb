@@ -9,7 +9,7 @@ Public Class verVentaDetalle
             Dim dt As New DataTable
             Dim cn As New SqlConnection
             cn.ConnectionString = conexion
-            Using adaptador As New SqlDataAdapter("SELECT dbo.detalleVenta.ID_producto, dbo.producto.Nombre_producto, dbo.detalleVenta.cantidad, dbo.detalleVenta.total FROM dbo.detalleVenta INNER JOIN dbo.producto ON dbo.detalleVenta.ID_producto = dbo.producto.ID_producto where n_venta='" + TextBox1.Text() + "' ;", conexion)
+            Using adaptador As New SqlDataAdapter("SELECT dbo.detalleVenta.ID_producto, dbo.producto.Nombre_producto, dbo.detalleVenta.cantidad, dbo.detalleVenta.total FROM dbo.detalleVenta INNER JOIN dbo.producto ON dbo.detalleVenta.ID_producto = dbo.producto.ID_producto where n_venta='" + auxiliar.Text() + "' ;", conexion)
                 adaptador.Fill(dt)
             End Using
             DataGrid.DataSource = dt

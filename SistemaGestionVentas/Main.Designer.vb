@@ -33,65 +33,59 @@ Partial Class Main
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(-2, 0)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(-1, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1064, 216)
+        Me.Label1.Size = New System.Drawing.Size(724, 146)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Sistema de gestion  de " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "venta y bodega"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(108, 446)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button1.Location = New System.Drawing.Point(72, 290)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(159, 48)
+        Me.Button1.Size = New System.Drawing.Size(106, 31)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Realizar venta"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(108, 523)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button2.Location = New System.Drawing.Point(72, 340)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(159, 48)
+        Me.Button2.Size = New System.Drawing.Size(106, 31)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "Ver ventas"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(427, 480)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button3.Location = New System.Drawing.Point(285, 312)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(162, 48)
+        Me.Button3.Size = New System.Drawing.Size(108, 31)
         Me.Button3.TabIndex = 3
         Me.Button3.Text = "Inventario"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(755, 480)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button5.Location = New System.Drawing.Point(503, 312)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(171, 48)
+        Me.Button5.Size = New System.Drawing.Size(114, 31)
         Me.Button5.TabIndex = 5
         Me.Button5.Text = "Productos"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Main
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1033, 671)
+        Me.ClientSize = New System.Drawing.Size(689, 436)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Main"
         Me.Text = "Form1"
         Me.ResumeLayout(False)

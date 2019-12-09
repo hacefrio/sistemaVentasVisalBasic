@@ -38,7 +38,7 @@ Public Class VerVentas
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        verVentaDetalle.TextBox1.Text = nBoleta.Text
+        verVentaDetalle.auxiliar.Text = nBoleta.Text
         verVentaDetalle.Show()
 
     End Sub
@@ -51,7 +51,7 @@ Public Class VerVentas
             cn.Open()
             ventasMes.Text = adaptador.ExecuteScalar()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox("Ingree una fecha valida")
         End Try
     End Sub
 End Class
